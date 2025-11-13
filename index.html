@@ -8,479 +8,964 @@
       name="description"
       content="Family-owned window cleaning and pressure washing in Waco, TX for over 30 years. Residential & commercial windows, gutters, patios, and more. Free estimates."
     />
-    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Waco Window Cleaning",
+        "image": "https://wacowindowcleaning.com/assets/logo.png",
+        "telephone": "+1-254-867-9602",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Waco",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "31.5493",
+          "longitude": "-97.1467"
+        },
+        "url": "https://wacowindowcleaning.com",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "50"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Window Cleaning Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Residential Window Cleaning",
+                "description": "Professional interior and exterior window cleaning for homes"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pressure Washing",
+                "description": "Exterior cleaning for driveways, patios, and building surfaces"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Gutter Cleaning",
+                "description": "Gutter cleaning and maintenance services"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#0f9ad6",
+                dark: "#0675a5",
+              },
+              accent: "#17b897",
+            },
+            fontFamily: {
+              sans: [
+                "Poppins",
+                "system-ui",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
-    <!-- Header / Navigation -->
-    <header class="site-header">
-      <div class="container nav-bar">
-        <a href="#top" class="logo">
-          <span class="logo-mark">WWC</span>
-          <span class="logo-text">
-            <span class="logo-title">Waco Window Cleaning</span>
-            <span class="logo-subtitle">Serving Waco for 30+ years</span>
-          </span>
-        </a>
 
-        <nav class="nav-links" id="navLinks">
-          <a href="#services">Services</a>
-          <a href="#why-us">Why us</a>
-          <a href="#process">Our process</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact</a>
-          <a href="tel:12548679602" class="nav-call-btn">(254) 867-9602</a>
+    <style>
+      /* Custom styles for things Tailwind doesn't cover easily */
+      .logo-mark {
+        background: radial-gradient(
+          circle at 20% 20%,
+          #ffffff 0,
+          #0f9ad6 35%,
+          #0675a5 100%
+        );
+        box-shadow: 0 10px 24px rgba(15, 154, 214, 0.5);
+      }
+
+      .hero-card-gradient {
+        background: linear-gradient(145deg, #ffffff, #f1f6fd);
+      }
+
+      .nav-toggle span {
+        transition: all 0.2s ease;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1rem;
+        background: #0f9ad6;
+        color: white;
+        text-decoration: none;
+      }
+
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+      }
+
+      *:focus-visible {
+        outline: 2px solid #0f9ad6;
+        outline-offset: 2px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .input-error {
+        border-color: #dc2626 !important;
+        background-color: #fef2f2 !important;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-gray-50/98 backdrop-blur-sm border-b border-gray-200/60"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <nav
+          class="flex items-center justify-between py-3.5"
+          aria-label="Main navigation"
+        >
+          <a
+            href="#top"
+            class="flex items-center gap-2.5 no-underline text-gray-800"
+          >
+            <span
+              class="logo-mark w-10 h-10 rounded-2xl text-white inline-flex items-center justify-center font-bold text-sm"
+            >
+              WWC
+            </span>
+            <span class="flex flex-col gap-0.5">
+              <span class="font-semibold text-base">Waco Window Cleaning</span>
+              <span class="text-xs text-gray-500"
+                >Serving Waco for 30+ years</span
+              >
+            </span>
+          </a>
+
+          <div class="hidden lg:flex items-center gap-5 text-sm" id="navLinks">
+            <a
+              href="#services"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a
+              href="#why-us"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Why us</a
+            >
+            <a
+              href="#process"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Our process</a
+            >
+            <a
+              href="#reviews"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Reviews</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-primary transition-colors"
+              >Contact</a
+            >
+            <a
+              href="tel:12548679602"
+              class="py-2 px-4 rounded-full border border-primary/25 text-primary font-medium bg-primary/5 hover:bg-primary/10 transition-colors"
+            >
+              (254) 867-9602
+            </a>
+          </div>
+
+          <button
+            class="lg:hidden flex flex-col justify-center gap-1.5 w-10 h-10 rounded-full border border-gray-300 bg-white"
+            id="navToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="h-0.5 w-5 bg-gray-800 rounded-full mx-auto"></span>
+            <span class="h-0.5 w-5 bg-gray-800 rounded-full mx-auto"></span>
+            <span class="h-0.5 w-5 bg-gray-800 rounded-full mx-auto"></span>
+          </button>
         </nav>
 
-        <button
-          class="nav-toggle"
-          id="navToggle"
-          aria-label="Toggle navigation"
+        <!-- Mobile Navigation -->
+        <div
+          class="lg:hidden hidden absolute left-6 right-6 top-16 bg-white rounded-2xl shadow-2xl p-4 flex-col gap-1.5"
+          id="mobileNav"
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <a
+            href="#services"
+            class="block w-full py-2 px-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors"
+            >Services</a
+          >
+          <a
+            href="#why-us"
+            class="block w-full py-2 px-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors"
+            >Why us</a
+          >
+          <a
+            href="#process"
+            class="block w-full py-2 px-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors"
+            >Our process</a
+          >
+          <a
+            href="#reviews"
+            class="block w-full py-2 px-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors"
+            >Reviews</a
+          >
+          <a
+            href="#contact"
+            class="block w-full py-2 px-2 rounded-lg text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors"
+            >Contact</a
+          >
+          <a
+            href="tel:12548679602"
+            class="block w-full py-2 px-4 rounded-full border border-primary/25 text-primary font-medium bg-primary/5 hover:bg-primary/10 transition-colors text-center mt-2"
+          >
+            (254) 867-9602
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Hero -->
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-content">
-            <p class="eyebrow">Family-owned • Insured • Free estimates</p>
-            <h1>Crystal-clear windows for homes & businesses in Waco, TX.</h1>
-            <p class="hero-subtitle">
-              Streak-free window cleaning, pressure washing, and gutter cleaning
-              from a trusted local team that’s been serving Waco for over 30
-              years.
-            </p>
-
-            <div class="hero-actions">
-              <a href="tel:12548679602" class="btn btn-primary"
-                >Call (254) 867-9602</a
+    <main id="main-content">
+      <section class="py-16 lg:py-20" id="top">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-5 gap-10 items-center">
+            <!-- Hero Content -->
+            <div class="lg:col-span-3">
+              <p
+                class="text-xs uppercase tracking-widest text-primary font-semibold mb-2"
               >
-              <a href="#quote" class="btn btn-outline"
-                >Request a free estimate</a
-              >
-            </div>
+                Family-owned • Insured • Free estimates
+              </p>
+              <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                Crystal-clear windows for homes & businesses in Waco, TX.
+              </h1>
+              <p class="text-base text-gray-600 max-w-xl mb-6">
+                Streak-free window cleaning, pressure washing, and gutter
+                cleaning from a trusted local team that's been serving Waco for
+                over 30 years.
+              </p>
 
-            <div class="hero-badges">
-              <span>✔ Residential & Commercial</span>
-              <span>✔ Cash & Check Accepted</span>
-              <span>✔ Satisfaction Guaranteed</span>
-            </div>
-          </div>
+              <div class="flex flex-wrap gap-3 mb-5">
+                <a
+                  href="tel:12548679602"
+                  class="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-white font-medium shadow-lg shadow-primary/35 hover:bg-primary-dark hover:-translate-y-0.5 transition-all"
+                >
+                  Call (254) 867-9602
+                </a>
+                <a
+                  href="#quote"
+                  class="inline-flex items-center justify-center py-3 px-6 rounded-full border border-gray-300 text-gray-800 font-medium hover:border-primary hover:text-primary hover:bg-primary/5 transition-all"
+                >
+                  Request a free estimate
+                </a>
+              </div>
 
-          <aside class="hero-card">
-            <h2>Fast, free estimate</h2>
-            <p class="hero-card-text">
-              Tell us about your windows or exterior cleaning needs and we’ll
-              get back to you quickly with a free quote.
-            </p>
-
-            <ul class="hero-info-list">
-              <li>
-                <span class="label">Service Area</span>
-                <span class="value">Waco, TX & surrounding areas</span>
-              </li>
-              <li>
-                <span class="label">Business Hours</span>
-                <span class="value">
-                  Mon–Fri: 9am–5pm<br />
-                  Sat–Sun: Closed
+              <div class="flex flex-wrap gap-2 text-xs text-gray-600">
+                <span
+                  class="py-1.5 px-3 bg-white/75 rounded-full border border-gray-200"
+                >
+                  ✔ Residential & Commercial
                 </span>
-              </li>
-              <li>
-                <span class="label">Contact</span>
-                <a href="tel:12548679602" class="value link">(254) 867-9602</a>
-              </li>
-              <li>
-                <span class="label">Reviews</span>
-                <a href="https://www.yelp.com/biz/waco-window-cleaning-waco-2"
-   target="_blank"
-   rel="noopener"
-   class="value link">
-  View us on Yelp
-</a>
+                <span
+                  class="py-1.5 px-3 bg-white/75 rounded-full border border-gray-200"
+                >
+                  ✔ Cash & Check Accepted
+                </span>
+                <span
+                  class="py-1.5 px-3 bg-white/75 rounded-full border border-gray-200"
+                >
+                  ✔ Satisfaction Guaranteed
+                </span>
+              </div>
+            </div>
 
-              </li>
-            </ul>
-          </aside>
+            <!-- Hero Card -->
+            <aside
+              class="lg:col-span-2 hero-card-gradient rounded-3xl p-7 shadow-2xl border border-gray-200/90"
+            >
+              <h2 class="text-xl font-semibold mb-2">Fast, free estimate</h2>
+              <p class="text-sm text-gray-600 mb-6">
+                Tell us about your windows or exterior cleaning needs and we'll
+                get back to you quickly with a free quote.
+              </p>
+
+              <ul class="space-y-4">
+                <li class="pb-3 border-b border-dashed border-gray-300">
+                  <span
+                    class="block text-xs uppercase tracking-wider text-gray-500 mb-1"
+                    >Service Area</span
+                  >
+                  <span class="block text-sm font-medium"
+                    >Waco, TX & surrounding areas</span
+                  >
+                </li>
+                <li class="pb-3 border-b border-dashed border-gray-300">
+                  <span
+                    class="block text-xs uppercase tracking-wider text-gray-500 mb-1"
+                    >Business Hours</span
+                  >
+                  <span class="block text-sm font-medium">
+                    Mon–Fri: 9am–5pm<br />
+                    Sat–Sun: Closed
+                  </span>
+                </li>
+                <li class="pb-3 border-b border-dashed border-gray-300">
+                  <span
+                    class="block text-xs uppercase tracking-wider text-gray-500 mb-1"
+                    >Contact</span
+                  >
+                  <a
+                    href="tel:12548679602"
+                    class="block text-sm font-medium text-primary hover:underline"
+                  >
+                    (254) 867-9602
+                  </a>
+                </li>
+                <li>
+                  <span
+                    class="block text-xs uppercase tracking-wider text-gray-500 mb-1"
+                    >Reviews</span
+                  >
+                  <a
+                    href="https://www.yelp.com/biz/waco-window-cleaning-waco-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block text-sm font-medium text-primary hover:underline"
+                  >
+                    View us on Yelp
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
         </div>
       </section>
 
       <!-- Services -->
-      <section id="services" class="section section-alt">
-        <div class="container">
-          <div class="section-header">
-            <h2>Window cleaning & exterior services</h2>
-            <p>
+      <section id="services" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-3">
+              Window cleaning & exterior services
+            </h2>
+            <p class="text-gray-600">
               We keep glass, gutters, and exterior surfaces spotless so your
               property always looks its best.
             </p>
           </div>
 
-          <div class="services-grid">
-            <article class="service-card">
-              <div class="service-image">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Service Card 1 -->
+            <article
+              class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="w-full rounded-xl overflow-hidden mb-3 bg-gray-100">
                 <img
                   src="assets/IMG_7306.jpeg"
                   alt="Gloved hand using a squeegee to clean a soapy window"
                   loading="lazy"
+                  class="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3>Residential Window Cleaning</h3>
-              <p>
+              <h3 class="text-lg font-semibold mb-2">
+                Residential Window Cleaning
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">
                 Streak-free interior and exterior window cleaning for houses,
-                townhomes, and apartments. We treat your home like it’s our own.
+                townhomes, and apartments. We treat your home like it's our own.
               </p>
-              <ul>
-                <li>Interior & exterior glass</li>
-                <li>Mirrors & glass doors</li>
-                <li>Screen & sill cleaning</li>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Interior & exterior glass
+                </li>
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Mirrors & glass doors
+                </li>
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Screen & sill cleaning
+                </li>
               </ul>
             </article>
 
-            <article class="service-card">
-              <div class="service-image">
+            <!-- Service Card 2 -->
+            <article
+              class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="w-full rounded-xl overflow-hidden mb-3 bg-gray-100">
                 <img
                   src="assets/IMG_7308.jpeg"
                   alt="Pressure washing nozzle cleaning an outdoor surface"
                   loading="lazy"
+                  class="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3>Pressure & Power Washing</h3>
-              <p>
+              <h3 class="text-lg font-semibold mb-2">
+                Pressure & Power Washing
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">
                 Remove dirt, stains, and buildup from the exterior of your
                 property with careful, effective pressure washing.
               </p>
-              <ul>
-                <li>House, brick & siding</li>
-                <li>Driveways & sidewalks</li>
-                <li>Patios & stone walkways</li>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  House, brick & siding
+                </li>
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Driveways & sidewalks
+                </li>
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Patios & stone walkways
+                </li>
               </ul>
             </article>
 
-            <article class="service-card">
-  <div class="service-image">
-    <img
-      src="assets/IMG_7307.jpeg"
-      alt="Fall leaves filling a home gutter before cleaning"
-      loading="lazy"
-    >
-  </div>
-  <h3>Gutter & Patio Cleaning</h3>
-  <p>
-    Keep water flowing properly and outdoor spaces clean with our gutter and patio cleaning services.
-  </p>
-  <ul>
-    <li>Gutter cleaning & flushing</li>
-    <li>Patio & deck cleaning</li>
-    <li>Screened-in porches</li>
-  </ul>
-</article>
+            <!-- Service Card 3 -->
+            <article
+              class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="w-full rounded-xl overflow-hidden mb-3 bg-gray-100">
+                <img
+                  src="assets/IMG_7307.jpeg"
+                  alt="Fall leaves filling a home gutter before cleaning"
+                  loading="lazy"
+                  class="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 class="text-lg font-semibold mb-2">
+                Gutter & Patio Cleaning
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Keep water flowing properly and outdoor spaces clean with our
+                gutter and patio cleaning services.
+              </p>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Gutter cleaning & flushing
+                </li>
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Patio & deck cleaning
+                </li>
+                <li
+                  class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary"
+                >
+                  Screened-in porches
+                </li>
+              </ul>
+            </article>
+          </div>
 
-
-          <div class="section-cta">
-            <p>
-              Don’t see your service listed? Ask us—we handle most window and
+          <div class="text-center mt-10 text-gray-600">
+            <p class="mb-3">
+              Don't see your service listed? Ask us—we handle most window and
               exterior cleaning projects.
             </p>
-            <a href="tel:12548679602" class="btn btn-secondary"
-              >Call to ask about your project</a
+            <a
+              href="tel:12548679602"
+              class="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent text-white font-medium hover:bg-accent/90 transition-colors"
             >
+              Call to ask about your project
+            </a>
           </div>
         </div>
       </section>
 
       <!-- Why Us -->
-      <section id="why-us" class="section">
-        <div class="container two-column">
-          <div class="two-column-main">
-            <h2>Why Waco trusts Waco Window Cleaning</h2>
-            <p>
-              We’re a small, family-owned business that’s been cleaning windows
-              and washing exteriors in the Waco area for over three decades. Our
-              goal on every job is simple: leave your home or business so clean
-              that you can’t wait to call us back next time.
-            </p>
+      <section id="why-us" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-5 gap-10 items-start">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+              <h2 class="text-3xl lg:text-4xl font-bold mb-3">
+                Why Waco trusts Waco Window Cleaning
+              </h2>
+              <p class="text-gray-600 mb-6">
+                We're a small, family-owned business that's been cleaning
+                windows and washing exteriors in the Waco area for over three
+                decades. Our goal on every job is simple: leave your home or
+                business so clean that you can't wait to call us back next time.
+              </p>
 
-            <div class="feature-list">
-              <div class="feature-item">
-                <h3>Experts in the industry</h3>
-                <p>
-                  Our team specializes in window cleaning and power washing. We
-                  show up on time, respect your property, and leave you with
-                  spotless results.
-                </p>
-              </div>
-              <div class="feature-item">
-                <h3>Dedicated to our community</h3>
-                <p>
-                  We’re proud to serve Waco and surrounding areas. Many of our
-                  customers have trusted us for years and recommend us to
-                  friends and neighbors.
-                </p>
-              </div>
-              <div class="feature-item">
-                <h3>Honest, straightforward pricing</h3>
-                <p>
-                  Free estimates, clear pricing, and payment by cash or check
-                  upon completion of work—unless other arrangements are made in
-                  advance.
-                </p>
+              <div class="space-y-6">
+                <div>
+                  <h3 class="text-lg font-semibold mb-1">
+                    Experts in the industry
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Our team specializes in window cleaning and power washing.
+                    We show up on time, respect your property, and leave you
+                    with spotless results.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold mb-1">
+                    Dedicated to our community
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    We're proud to serve Waco and surrounding areas. Many of our
+                    customers have trusted us for years and recommend us to
+                    friends and neighbors.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold mb-1">
+                    Honest, straightforward pricing
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Free estimates, clear pricing, and payment by cash or check
+                    upon completion of work—unless other arrangements are made
+                    in advance.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <aside class="two-column-side stats-card">
-            <h3>What you can expect</h3>
-            <ul>
-              <li>
-                <span class="stat-number">30+</span
-                ><span class="stat-label">Years serving Waco</span>
-              </li>
-              <li>
-                <span class="stat-number">1000s</span
-                ><span class="stat-label">Windows cleaned</span>
-              </li>
-              <li>
-                <span class="stat-number">100%</span
-                ><span class="stat-label">Satisfaction focus</span>
-              </li>
-            </ul>
-            <p class="stats-note">
-              We stand behind our work and want you to feel confident every time
-              you call us.
-            </p>
-          </aside>
+            <!-- Stats Card -->
+            <aside
+              class="lg:col-span-2 bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"
+            >
+              <h3 class="font-semibold mb-4">What you can expect</h3>
+              <ul class="space-y-4 mb-4">
+                <li>
+                  <span class="block text-3xl font-bold text-primary">30+</span>
+                  <span class="text-sm text-gray-600">Years serving Waco</span>
+                </li>
+                <li>
+                  <span class="block text-3xl font-bold text-primary"
+                    >1000s</span
+                  >
+                  <span class="text-sm text-gray-600">Windows cleaned</span>
+                </li>
+                <li>
+                  <span class="block text-3xl font-bold text-primary"
+                    >100%</span
+                  >
+                  <span class="text-sm text-gray-600">Satisfaction focus</span>
+                </li>
+              </ul>
+              <p class="text-sm text-gray-600">
+                We stand behind our work and want you to feel confident every
+                time you call us.
+              </p>
+            </aside>
+          </div>
         </div>
       </section>
 
       <!-- Process -->
-      <section id="process" class="section section-alt">
-        <div class="container">
-          <div class="section-header">
-            <h2>How it works</h2>
-            <p>Getting your windows or exterior surfaces cleaned is simple.</p>
+      <section id="process" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-3">How it works</h2>
+            <p class="text-gray-600">
+              Getting your windows or exterior surfaces cleaned is simple.
+            </p>
           </div>
 
-          <div class="process-grid">
-            <div class="process-step">
-              <span class="step-number">1</span>
-              <h3>Request a free estimate</h3>
-              <p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white rounded-2xl p-5 border border-gray-200">
+              <span
+                class="w-8 h-8 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center text-sm font-semibold mb-3"
+              >
+                1
+              </span>
+              <h3 class="text-base font-semibold mb-1">
+                Request a free estimate
+              </h3>
+              <p class="text-sm text-gray-600">
                 Call us or send a quick message with what you need cleaned and
                 your location.
               </p>
             </div>
-            <div class="process-step">
-              <span class="step-number">2</span>
-              <h3>Schedule your service</h3>
-              <p>
-                We’ll give you a fair quote and set up a convenient time that
+
+            <div class="bg-white rounded-2xl p-5 border border-gray-200">
+              <span
+                class="w-8 h-8 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center text-sm font-semibold mb-3"
+              >
+                2
+              </span>
+              <h3 class="text-base font-semibold mb-1">
+                Schedule your service
+              </h3>
+              <p class="text-sm text-gray-600">
+                We'll give you a fair quote and set up a convenient time that
                 works for you.
               </p>
             </div>
-            <div class="process-step">
-              <span class="step-number">3</span>
-              <h3>We get to work</h3>
-              <p>
+
+            <div class="bg-white rounded-2xl p-5 border border-gray-200">
+              <span
+                class="w-8 h-8 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center text-sm font-semibold mb-3"
+              >
+                3
+              </span>
+              <h3 class="text-base font-semibold mb-1">We get to work</h3>
+              <p class="text-sm text-gray-600">
                 Our team arrives on time, protects your property, and cleans
                 everything to our high standards.
               </p>
             </div>
-            <div class="process-step">
-              <span class="step-number">4</span>
-              <h3>Enjoy the view</h3>
-              <p>
-                Walk through the job with us and make sure you’re happy. Payment
-                is due once you’re satisfied.
+
+            <div class="bg-white rounded-2xl p-5 border border-gray-200">
+              <span
+                class="w-8 h-8 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center text-sm font-semibold mb-3"
+              >
+                4
+              </span>
+              <h3 class="text-base font-semibold mb-1">Enjoy the view</h3>
+              <p class="text-sm text-gray-600">
+                Walk through the job with us and make sure you're happy. Payment
+                is due once you're satisfied.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Reviews (you can replace with real ones later) -->
-      <section id="reviews" class="section">
-        <div class="container">
-          <div class="section-header">
-            <h2>What customers say</h2>
-            <p>
-              Here’s how people describe their experience with Waco Window
+      <!-- Reviews -->
+      <section id="reviews" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-3">
+              What customers say
+            </h2>
+            <p class="text-gray-600">
+              Here's how people describe their experience with Waco Window
               Cleaning.
             </p>
           </div>
 
-          <div class="reviews-grid">
-            <article class="review-card">
-              <p class="review-text">
-                “They did an amazing job on our windows and patio. Showed up on
-                time, were very polite, and left everything spotless.”
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="bg-white rounded-2xl p-5 border border-gray-200">
+              <p class="text-sm text-gray-600 mb-3">
+                "They did an amazing job on our windows and patio. Showed up on
+                time, were very polite, and left everything spotless."
               </p>
-              <p class="review-author">— Local homeowner in Waco</p>
+              <p class="text-sm font-medium">— Local homeowner in Waco</p>
             </article>
 
-            <article class="review-card">
-              <p class="review-text">
-                “We’ve used them for our storefront windows for years. Reliable,
-                affordable, and the windows always look great.”
+            <article class="bg-white rounded-2xl p-5 border border-gray-200">
+              <p class="text-sm text-gray-600 mb-3">
+                "We've used them for our storefront windows for years. Reliable,
+                affordable, and the windows always look great."
               </p>
-              <p class="review-author">— Small business owner, Waco</p>
+              <p class="text-sm font-medium">— Small business owner, Waco</p>
             </article>
 
-            <article class="review-card">
-              <p class="review-text">
-                “Quick estimate, fair pricing, and our driveway and sidewalks
-                look brand new after pressure washing.”
+            <article class="bg-white rounded-2xl p-5 border border-gray-200">
+              <p class="text-sm text-gray-600 mb-3">
+                "Quick estimate, fair pricing, and our driveway and sidewalks
+                look brand new after pressure washing."
               </p>
-              <p class="review-author">
+              <p class="text-sm font-medium">
                 — Residential client, surrounding area
               </p>
             </article>
           </div>
 
-          <div class="section-cta">
-            <a href="https://www.yelp.com/biz/waco-window-cleaning-waco-2"
-   target="_blank"
-   rel="noopener"
-   class="btn btn-outline">
-  View more reviews on Yelp
-</a>
-
+          <div class="text-center mt-10">
+            <a
+              href="https://www.yelp.com/biz/waco-window-cleaning-waco-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center py-3 px-6 rounded-full border border-gray-300 text-gray-800 font-medium hover:border-primary hover:text-primary hover:bg-primary/5 transition-all"
+            >
+              View more reviews on Yelp
+            </a>
           </div>
         </div>
       </section>
 
       <!-- Contact / Quote -->
-      <section id="contact" class="section section-alt">
-        <div class="container contact-grid">
-          <div class="contact-info">
-            <h2>Ready for cleaner windows?</h2>
-            <p>
-              Give us a call or send a message and we’ll reach out shortly to
-              schedule your free estimate.
-            </p>
+      <section id="contact" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-5 gap-10 items-start">
+            <!-- Contact Info -->
+            <div class="lg:col-span-2">
+              <h2 class="text-3xl lg:text-4xl font-bold mb-3">
+                Ready for cleaner windows?
+              </h2>
+              <p class="text-gray-600 mb-8">
+                Give us a call or send a message and we'll reach out shortly to
+                schedule your free estimate.
+              </p>
 
-            <div class="contact-details">
-              <div>
-                <h3>Call us</h3>
-                <a href="tel:12548679602" class="contact-link"
-                  >(254) 867-9602</a
-                >
-              </div>
-              <div>
-                <h3>Service area</h3>
-                <p>Waco, TX and all surrounding areas</p>
-              </div>
-              <div>
-                <h3>Business hours</h3>
-                <p>
-                  Monday–Friday: 9am–5pm<br />
-                  Saturday & Sunday: Closed
-                </p>
-              </div>
-              <div>
-                <h3>Payments accepted</h3>
-                <p>Cash or check</p>
+              <div class="space-y-6">
+                <div>
+                  <h3 class="font-semibold mb-1">Call us</h3>
+                  <a
+                    href="tel:12548679602"
+                    class="text-primary font-semibold hover:underline"
+                  >
+                    (254) 867-9602
+                  </a>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Service area</h3>
+                  <p class="text-sm text-gray-600">
+                    Waco, TX and all surrounding areas
+                  </p>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Business hours</h3>
+                  <p class="text-sm text-gray-600">
+                    Monday–Friday: 9am–5pm<br />
+                    Saturday & Sunday: Closed
+                  </p>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Payments accepted</h3>
+                  <p class="text-sm text-gray-600">Cash or check</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="contact-form-card" id="quote">
-            <h3>Request a free estimate</h3>
-            <p>Fill out this short form and we’ll contact you soon.</p>
+            <!-- Contact Form -->
+            <div
+              class="lg:col-span-3 bg-white rounded-3xl p-7 border border-gray-200 shadow-2xl"
+              id="quote"
+            >
+              <h3 class="text-xl font-semibold mb-2">
+                Request a free estimate
+              </h3>
+              <p class="text-sm text-gray-600 mb-6">
+                Fill out this short form and we'll contact you soon.
+              </p>
 
-            <!-- Replace action / method with whatever backend or service you use -->
-            <form class="contact-form" id="quoteForm" novalidate>
-              <div class="form-row">
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div class="form-row">
-                <label for="phone">Phone*</label>
-                <input type="tel" id="phone" name="phone" required />
-              </div>
-              <div class="form-row">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" />
-              </div>
-              <div class="form-row">
-                <label for="message">What do you need cleaned?*</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-
-              <div class="form-row form-row-inline">
-                <div>
-                  <label for="service-type">Service type</label>
-                  <select id="service-type" name="service-type">
-                    <option value="">Select one</option>
-                    <option>Residential windows</option>
-                    <option>Commercial windows</option>
-                    <option>Pressure washing</option>
-                    <option>Gutter cleaning</option>
-                    <option>Multiple services</option>
-                  </select>
+              <form class="space-y-4" id="quoteForm" novalidate>
+                <div class="flex flex-col gap-1">
+                  <label for="name" class="text-sm font-medium">Name*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    aria-required="true"
+                    class="rounded-lg border border-gray-300 py-2 px-3 text-sm bg-blue-50/50 focus:border-primary focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none"
+                  />
                 </div>
-                <div>
-                  <label for="captcha">4 + 13 = ?*</label>
-                  <input type="number" id="captcha" name="captcha" required />
-                </div>
-              </div>
 
-              <button type="submit" class="btn btn-primary btn-block">
-                Submit request
-              </button>
-              <p class="form-note">*Required fields</p>
-              <p class="form-success" id="formSuccess" aria-live="polite"></p>
-            </form>
+                <div class="flex flex-col gap-1">
+                  <label for="phone" class="text-sm font-medium">Phone*</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    aria-required="true"
+                    class="rounded-lg border border-gray-300 py-2 px-3 text-sm bg-blue-50/50 focus:border-primary focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <label for="email" class="text-sm font-medium">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="rounded-lg border border-gray-300 py-2 px-3 text-sm bg-blue-50/50 focus:border-primary focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <label for="message" class="text-sm font-medium"
+                    >What do you need cleaned?*</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    aria-required="true"
+                    class="rounded-lg border border-gray-300 py-2 px-3 text-sm bg-blue-50/50 focus:border-primary focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none resize-y min-h-[120px]"
+                  ></textarea>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="flex flex-col gap-1">
+                    <label for="service-type" class="text-sm font-medium"
+                      >Service type</label
+                    >
+                    <select
+                      id="service-type"
+                      name="service-type"
+                      class="rounded-lg border border-gray-300 py-2 px-3 text-sm bg-blue-50/50 focus:border-primary focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none"
+                    >
+                      <option value="">Select one</option>
+                      <option>Residential windows</option>
+                      <option>Commercial windows</option>
+                      <option>Pressure washing</option>
+                      <option>Gutter cleaning</option>
+                      <option>Multiple services</option>
+                    </select>
+                  </div>
+
+                  <div class="flex flex-col gap-1">
+                    <label for="captcha" class="text-sm font-medium"
+                      >4 + 13 = ?*</label
+                    >
+                    <input
+                      type="number"
+                      id="captcha"
+                      name="captcha"
+                      required
+                      aria-required="true"
+                      class="rounded-lg border border-gray-300 py-2 px-3 text-sm bg-blue-50/50 focus:border-primary focus:ring-1 focus:ring-primary focus:bg-white transition-all outline-none"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full py-3 px-6 rounded-full bg-primary text-white font-medium shadow-lg shadow-primary/35 hover:bg-primary-dark transition-all"
+                >
+                  Submit request
+                </button>
+
+                <p class="text-xs text-gray-500 mt-2">*Required fields</p>
+                <p
+                  class="text-sm mt-2 min-h-[1.25rem]"
+                  id="formSuccess"
+                  aria-live="polite"
+                ></p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <h3>Waco Window Cleaning</h3>
-          <p>
-            Window cleaning, pressure washing, power washing, gutter cleaning,
-            and more in Waco, Texas and surrounding areas.
-          </p>
+    <footer class="mt-10 bg-gray-900 text-gray-300">
+      <div class="max-w-7xl mx-auto px-6 py-10">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="text-white font-semibold mb-2">Waco Window Cleaning</h3>
+            <p class="text-sm">
+              Window cleaning, pressure washing, power washing, gutter cleaning,
+              and more in Waco, Texas and surrounding areas.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-medium mb-2">Contact</h4>
+            <a
+              href="tel:12548679602"
+              class="text-gray-200 hover:text-white transition-colors block mb-1"
+            >
+              (254) 867-9602
+            </a>
+            <p class="text-sm text-gray-400">
+              Mon–Fri: 9am–5pm • Sat–Sun: Closed
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-medium mb-2">Quick links</h4>
+            <a
+              href="#services"
+              class="text-gray-200 hover:text-white transition-colors block mb-1 text-sm"
+              >Services</a
+            >
+            <a
+              href="#reviews"
+              class="text-gray-200 hover:text-white transition-colors block mb-1 text-sm"
+              >Reviews</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-200 hover:text-white transition-colors block text-sm"
+              >Free estimate</a
+            >
+          </div>
         </div>
-        <div>
-          <h4>Contact</h4>
-          <a href="tel:12548679602" class="footer-link">(254) 867-9602</a>
-          <p class="footer-text">Mon–Fri: 9am–5pm • Sat–Sun: Closed</p>
-        </div>
-        <div>
-          <h4>Quick links</h4>
-          <a href="#services" class="footer-link">Services</a><br />
-          <a href="#reviews" class="footer-link">Reviews</a><br />
-          <a href="#contact" class="footer-link">Free estimate</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
+
+        <div
+          class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-gray-400"
+        >
           <p>
             © <span id="year"></span> Waco Window Cleaning. All rights reserved.
           </p>
-          <p>Website by <a href="https://teaguewebstudio.com" class="footer-link">Teague Web Studio</a></p>
-
+          <p>
+            Website by
+            <a
+              href="https://teaguewebstudio.com"
+              class="text-gray-300 hover:text-white transition-colors"
+              >Teague Web Studio</a
+            >
+          </p>
         </div>
       </div>
     </footer>
